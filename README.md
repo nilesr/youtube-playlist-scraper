@@ -8,7 +8,7 @@ is to just download the new song every time you add a new song to your playlists
 and put it in this folder, then run step 4 again (without step 3)
 
 ## Requirements
-- [youtube-dl](https://github.com/rg3/youtube-dl/)
+- [youtube-dl](https://github.com/rg3/youtube-dl/#installation)
 - ffmpeg (or avconv)
 - Youtube API key.
 - Nokogiri (`gem install nokogiri`)
