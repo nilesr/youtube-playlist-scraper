@@ -5,7 +5,7 @@ of your music online, and have to go on a long road trip.
 This will either download all of the songs in the playlists at once or just
 update their positions, but it will NOT download only new songs. Your best bet
 is to just download the new song every time you add a new song to your playlists
-and put it in this folder.
+and put it in this folder, then run step 4 again (without step 3)
 
 ## Requirements
 - [youtube-dl](https://github.com/rg3/youtube-dl/)
