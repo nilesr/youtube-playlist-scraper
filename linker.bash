@@ -4,7 +4,7 @@ while read line; do
 	playlist=$(echo "$line"|awk '{print $2}')
 	id=$(echo "$line"|awk '{print $3}')
 	test "$id" = "" && continue
-	mkdir "$playlist" 2>/dev/null
+	mkdir "$playlist" 2>/dev/null && echo Created directory "$playlist"
 	currentfilename=$(find . -name '*'"$id"'*')
 	newfilename="$idx. "$(echo "$currentfilename"|awk '{print substr($0, 3)}')
 	ln -s "$PWD/$currentfilename" "$playlist"/"$newfilename"
