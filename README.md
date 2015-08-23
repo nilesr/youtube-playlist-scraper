@@ -18,3 +18,10 @@ and put it in this folder.
 2. Put your playlist IDs in videos.rb. Those can be found in the URLs of the playlists.
 3. `ruby videos.rb download`
 4. `ruby videos.rb | ./linker.bash`
+
+Step 3 will download every single song in the playlist to the current working
+directory.  
+Step 4 will create a directory for each of the playlists, and link the mp3 files
+in the current directory into those directories with numbers indicating the
+position in the playlist. The easiest way to load these is to use VLC's "Open
+directory" option, which will load them in order because of the numbers.
