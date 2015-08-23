@@ -3,7 +3,12 @@ require 'net/http'
 require 'uri'
 require 'nokogiri'
 api_key = "REPLACE ME"
-playlists = Array.new ["PLIKcw9O7i0KR4Q-pC-7MLb_DoRmzYOCUw", "PLIKcw9O7i0KQO4aHOqypivLefSFKq2vp1", "PLIKcw9O7i0KSeW6AmMmg3D4etDs5YeX8q", "PLIKcw9O7i0KRZ43r5UVGNraUgvyPaUMBU"]
+playlists = Array.new [
+	"PLIKcw9O7i0KR4Q-pC-7MLb_DoRmzYOCUw",
+	"PLIKcw9O7i0KQO4aHOqypivLefSFKq2vp1",
+	"PLIKcw9O7i0KSeW6AmMmg3D4etDs5YeX8q",
+	"PLIKcw9O7i0KRZ43r5UVGNraUgvyPaUMBU"
+]
 playlists.each do |playlist|
 	videos = Array.new
 	parsed = JSON.parse(Net::HTTP.get(URI.parse("https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=" + playlist + "&maxResults=50&key=" + api_key)))
