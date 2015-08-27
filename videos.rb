@@ -22,11 +22,7 @@ playlists.each do |playlist|
 	videos.each do |video_list|
 		video_list.each do |video_dict|
 			index += 1
-			if ARGV[0].upcase == "DOWNLOAD" then
-				system "youtube-dl -x --audio-format mp3 -w -C -i http://youtube.com/watch?v=" + video_dict["contentDetails"]["videoid"]
-			else
-				puts index.to_s.rjust(3,"0") + " " + playlist + " " + video_dict["contentDetails"]["videoId"]
-			end
+			puts index.to_s.rjust(3,"0") + " " + playlist + " " + video_dict["contentDetails"]["videoId"]
 		end
 	end
 end

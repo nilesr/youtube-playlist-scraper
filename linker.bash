@@ -6,6 +6,10 @@ while read line; do
 	test "$id" = "" && continue
 	mkdir "$playlist" 2>/dev/null && echo Created directory "$playlist"
 	currentfilename=$(find . -name '*'"$id"'*')
+	if test "$currentfilename" = ""; then
+	   	youtube-dl -x --audio-format mp3 -w -C -i "http://youtube.com/watch?v=$id"
+		currentfilename=$(find . -name '*'"$id"'*')
+	fi
 	newfilename="$idx. "$(echo "$currentfilename"|awk '{print substr($0, 3)}')
 	ln -s "$PWD/$currentfilename" "$playlist"/"$newfilename"
 done
