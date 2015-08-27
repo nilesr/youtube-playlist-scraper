@@ -7,6 +7,8 @@ new song, just delete the playlist folders and repeat step 3. It will
 automatically download new songs if necessary and re-link the songs in the
 correct order.
 
+It will not delete songs that are removed from playlists.
+
 ## Requirements
 - [youtube-dl](https://github.com/rg3/youtube-dl/#installation)
 - ffmpeg (or avconv)
