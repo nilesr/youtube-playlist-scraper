@@ -9,6 +9,8 @@ correct order.
 
 It will not delete songs that are removed from playlists.
 
+Another great feature is that if you download a video before it gets deleted or made private, so long as you don't remove it from the playlist through youtube, it will continue linking the already-downloaded mp3 to the correct position. [example](https://i.imgur.com/wrvLGDR.png)
+
 ## Requirements
 - [youtube-dl](https://github.com/rg3/youtube-dl/#installation)
 - ffmpeg (or avconv)
@@ -21,3 +23,5 @@ It will not delete songs that are removed from playlists.
    playlists.
 3. `ruby videos.rb | ./linker.bash`
 
+## If it stops working
+Either youtube has changed their API, or has made it harder to download videos. The first thing you should try is running `sudo youtube-dl -U`. If that doesn't fix it, please open a github issue.
