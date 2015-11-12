@@ -11,7 +11,7 @@ while read line; do
 		currentfilename=$(find . -name '*'"$id"'*' -maxdepth 1)
 	fi
 	if test "$currentfilename" = ""; then
-		echo "The $idx""th song of $playlist appears to have failed to download. ID $id"
+		echo "$(date) - The $idx""th song of $playlist appears to have failed to download. ID $id" | tee -a fail.log
 		continue
 	fi
 	newfilename="$idx. "$(echo "$currentfilename"|awk '{print substr($0, 3)}')
