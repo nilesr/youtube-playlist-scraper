@@ -22,6 +22,7 @@ Another great feature is that if you download a video before it gets deleted or 
 2. Put your playlist IDs in videos.rb. Those can be found in the URLs of the
    playlists.
 3. `ruby videos.rb | ./linker.bash`
+4. If some videos are missing, check fail.log, it should have more info.
 
 ## If it stops working
 Either youtube has changed their API, or has made it harder to download videos. The first thing you should try is running `sudo youtube-dl -U`. If that doesn't fix it, please open a github issue.
