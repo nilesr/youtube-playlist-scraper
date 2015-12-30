@@ -11,6 +11,8 @@ It will not delete songs that are removed from playlists.
 
 Another great feature is that if you download a video before it gets deleted or made private, so long as you don't remove it from the playlist through youtube, it will continue linking the already-downloaded mp3 to the correct position. [example](https://i.imgur.com/wrvLGDR.png)
 
+Yet another feature is that if you think someone may delete their account or make a playlist private, you can make a backup of it with `ruby videos.rb |grep PLAYLIST_ID > backup` so you can download the songs even if the playlist is deleted
+
 ## Requirements
 - [youtube-dl](https://github.com/rg3/youtube-dl/#installation)
 - ffmpeg (or avconv)
