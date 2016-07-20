@@ -7,7 +7,8 @@ while read line; do
 	mkdir "$playlist" 2>/dev/null && echo Created directory "$playlist"
 	currentfilename=$(find . -name '*'"$id"'*' -maxdepth 1)
 	if test "$currentfilename" = ""; then
-	   	youtube-dl -x -f bestaudio --audio-format best --audio-quality 9 --postprocessor-args '-strict -2' -w -C -i "http://youtube.com/watch?v=$id"
+		   #youtube-dl -w -C -i "http://youtube.com/watch?v=$id"
+		   youtube-dl -x -f bestaudio --audio-format best --audio-quality 9 --postprocessor-args '-strict -2' -w -C -i "http://youtube.com/watch?v=$id"
 		currentfilename=$(find . -name '*'"$id"'*' -maxdepth 1)
 	fi
 	if test "$currentfilename" = ""; then
