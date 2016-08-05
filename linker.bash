@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+errors=0
 while read line; do
 	idx=$(echo "$line"|awk '{print $1}')
 	playlist=$(echo "$line"|awk '{print $2}')
@@ -13,8 +14,10 @@ while read line; do
 	fi
 	if test "$currentfilename" = ""; then
 		echo "$(date) - The $idx""th song of $playlist appears to have failed to download. ID $id" | tee -a fail.log
+		errors=$(($errors+1))
 		continue
 	fi
 	newfilename="$idx. "$(echo "$currentfilename"|awk '{print substr($0, 3)}')
 	ln -s "$PWD/$currentfilename" "$playlist"/"$newfilename"
 done
+echo There were $errors errors
