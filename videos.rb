@@ -2,7 +2,7 @@ require 'json'
 require 'net/http'
 require 'uri'
 require 'nokogiri'
-api_key = "AIzaSyCFTHBJDTDaUayLszdNiOLimRu6ZCFLH1M"
+api_key = "CHANGEME"
 playlists = Array.new [
 	"PLIKcw9O7i0KR4Q-pC-7MLb_DoRmzYOCUw",
 	"PLIKcw9O7i0KQO4aHOqypivLefSFKq2vp1",
