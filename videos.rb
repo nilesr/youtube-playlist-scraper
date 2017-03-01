@@ -16,10 +16,14 @@ playlists = Array.new [
 	#"LLtgQiU872oPzG0qCEqMQExA" # Jared
 ]
 playlists.each do |playlist|
+	STDERR.puts "Downloading " + playlist
 	videos = Array.new
 	parsed = JSON.parse(Net::HTTP.get(URI.parse("https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=" + playlist + "&maxResults=50&key=" + api_key)))
 	videos << parsed["items"]
+	page = 1
 	while parsed.include? "nextPageToken" do
+		page += 1
+		STDERR.puts "Downloading " + playlist + " - Page " + page.to_s
 		parsed = JSON.parse(Net::HTTP.get(URI.parse("https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=" + playlist + "&maxResults=50&key=" + api_key + "&pageToken=" + parsed["nextPageToken"])))
 		videos << parsed["items"]
 	end
@@ -31,4 +35,5 @@ playlists.each do |playlist|
 			puts index.to_s.rjust(3,"0") + " " + playlist + " " + video_dict["contentDetails"]["videoId"]
 		end
 	end
+	STDERR.puts "Downloaded  " + playlist
 end

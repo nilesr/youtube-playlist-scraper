@@ -7,9 +7,11 @@ while read line; do
 	test "$id" = "" && continue
 	mkdir "$playlist" 2>/dev/null && echo Created directory "$playlist"
 	currentfilename=$(find . -name '*'"$id"'*' -maxdepth 1)
+	echo "Linking $id"
 	if test "$currentfilename" = ""; then
-		   #youtube-dl -w -C -i "http://youtube.com/watch?v=$id"
-		   youtube-dl -x -f bestaudio --audio-format best --audio-quality 9 --postprocessor-args '-strict -2' -w -C -i "http://youtube.com/watch?v=$id"
+		echo "Downloading $id"
+		#youtube-dl -w -C -i "http://youtube.com/watch?v=$id"
+		youtube-dl -x -f bestaudio --audio-format best --audio-quality 9 --postprocessor-args '-strict -2' -w -C -i "http://youtube.com/watch?v=$id"
 		currentfilename=$(find . -name '*'"$id"'*' -maxdepth 1)
 	fi
 	if test "$currentfilename" = ""; then
