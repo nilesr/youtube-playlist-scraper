@@ -2,6 +2,7 @@ require 'json'
 require 'net/http'
 require 'uri'
 require 'nokogiri'
+require 'resolv-replace'
 api_key = "CHANGEME"
 playlists = Array.new [
 	"PLIKcw9O7i0KR4Q-pC-7MLb_DoRmzYOCUw",
