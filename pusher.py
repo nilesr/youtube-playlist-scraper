@@ -25,9 +25,9 @@ for line in output:
 for k, v in expected.items():
 	current = existing.get(k, False)
 	if not current:
-		execute(["adb", "push", shlex.quote(local[k]), shlex.quote(v)])
+		execute(["adb", "push", local[k], v])
 	elif v != existing[k]:
 		execute(["adb", "shell", "mv", shlex.quote(current), shlex.quote(v)])
 for k, v in existing.items():
 	if not expected.get(k, False):
-		execute(["adb", "shell", "rm", v])
+		execute(["adb", "shell", "rm", shlex.quote(v)])
