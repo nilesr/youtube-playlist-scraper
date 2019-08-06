@@ -11,7 +11,7 @@ while read line; do
 	if test "$currentfilename" = ""; then
 		echo "Downloading $id"
 		#youtube-dl -w -C -i "http://youtube.com/watch?v=$id"
-		youtube-dl -x -f bestaudio --audio-format best --audio-quality 9 --postprocessor-args '-strict -2' -w -C -i "http://youtube.com/watch?v=$id"
+		youtube-dl --verbose -x -f bestaudio --audio-format best --audio-quality 9 --postprocessor-args '-strict -2' -w -C -i "http://youtube.com/watch?v=$id"
 		currentfilename=$(find . -name '*'"$id"'*' -maxdepth 1)
 	fi
 	if test "$currentfilename" = ""; then

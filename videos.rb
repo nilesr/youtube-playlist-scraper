@@ -13,7 +13,7 @@ playlists = Array.new [
 	"PLIKcw9O7i0KRlyVVSJZQEt2H-TqU-e_Tf", # Playlist 5
 
 	"PLIKcw9O7i0KTazhuqDrC9TECUlyGiwzuq", # Stadium jams
-	"PLIKcw9O7i0KS7RamPVROlspO6PU_Wq_VT", # Weeb music
+	"PLIKcw9O7i0KQE5Yy9McX-FrypzSPO4CpS", # edgy boi 2019 mix
 ]
 playlists.each do |playlist|
 	STDERR.puts "Downloading " + playlist
