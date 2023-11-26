@@ -5,15 +5,19 @@ require 'nokogiri'
 require 'resolv-replace'
 api_key = "CHANGEME"
 playlists = Array.new [
+	"PLIKcw9O7i0KQqbqKdGuYPzGPEDFs6xDvC", # Playlist -2
+	"PLIKcw9O7i0KQaxX8HMGECXVq1-ZCsER-B", # Playlist -1
 	"PLIKcw9O7i0KR4Q-pC-7MLb_DoRmzYOCUw", # Playlist 0
+	"PLIKcw9O7i0KRZ43r5UVGNraUgvyPaUMBU", # Playlist 1
 	"PLIKcw9O7i0KQO4aHOqypivLefSFKq2vp1", # Playlist 2
 	"PLIKcw9O7i0KSeW6AmMmg3D4etDs5YeX8q", # Playlist 3
-	"PLIKcw9O7i0KRZ43r5UVGNraUgvyPaUMBU", # Playlist 1
 	"PLIKcw9O7i0KTkhLF_MECKCA8DFWQIsGq7", # Playlist 4
 	"PLIKcw9O7i0KRlyVVSJZQEt2H-TqU-e_Tf", # Playlist 5
+	"PLIKcw9O7i0KS7Ec5_XtTj1yqn7ZCHXUHJ", # Playlist 6
+	"PLIKcw9O7i0KQK4AHiQy3cx_7FMIG7aBru", # Playlist 7
 
-	"PLIKcw9O7i0KTazhuqDrC9TECUlyGiwzuq", # Stadium jams
-	"PLIKcw9O7i0KQE5Yy9McX-FrypzSPO4CpS", # edgy boi 2019 mix
+	#"PLIKcw9O7i0KTazhuqDrC9TECUlyGiwzuq", # Stadium jams
+	#"PLIKcw9O7i0KQE5Yy9McX-FrypzSPO4CpS", # edgy boi 2019 mix
 ]
 playlists.each do |playlist|
 	STDERR.puts "Downloading " + playlist
