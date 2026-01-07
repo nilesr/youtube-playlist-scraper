@@ -3,7 +3,7 @@ require 'net/http'
 require 'uri'
 require 'nokogiri'
 require 'resolv-replace'
-api_key = "CHANGEME"
+api_key = File.read("api_key.txt").strip
 playlists = {
 	"PLIKcw9O7i0KQqbqKdGuYPzGPEDFs6xDvC" => "Playlist -2",
 	"PLIKcw9O7i0KQaxX8HMGECXVq1-ZCsER-B" => "Playlist -1",
