@@ -12,7 +12,7 @@ def execute(l):
 	print(l)
 	subprocess.call(l)
 for dir in dirs:
-	subprocess.call(["adb", "shell", "mkdir", basedir + "/" + dir])
+	subprocess.call(["adb", "shell", "mkdir", shlex.quote(basedir + "/" + dir)])
 	for f in glob.glob(dir + "/*"):
 		dest = subprocess.check_output(["readlink", f]).decode("utf-8").strip()
 		#subprocess.call(["adb", "push", dest, basedir + "/" + f])
