@@ -25,7 +25,8 @@ playlists.each do |playlist, name|
 	parsed = JSON.parse(Net::HTTP.get(URI.parse("https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=" + playlist + "&maxResults=50&key=" + api_key)))
 	videos << parsed["items"]
 	page = 1
-	while parsed.include? "nextPageToken" do
+	while parsed.include? "nextPageToken" and not parsed["items"].empty? do
+		#puts parsed
 		page += 1
 		STDERR.puts "Downloading " + playlist + " - Page " + page.to_s
 		parsed = JSON.parse(Net::HTTP.get(URI.parse("https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=" + playlist + "&maxResults=50&key=" + api_key + "&pageToken=" + parsed["nextPageToken"])))
